@@ -1,0 +1,36 @@
+
+li {
+    list-style-type: none;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border-bottom: 1px solid #ffffff;
+}
+li span {
+    font-size: 25px;
+}
+li button {
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+li .fa-star {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    color: #FFD700;
+    transition: .3s all;
+    opacity: 0;
+}
+
+.do-list-item.like .fa-star{
+    opacity: 1;
+}
