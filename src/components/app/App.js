@@ -11,12 +11,26 @@ class App extends Component {
         this.state = {
             data: [
                 {name: 'Bogdan', id: 1},
-                {name: 'Ihor', id: 1},
-                {name: 'Alisa', id: 1}
+                {name: 'Ihor', id: 2},
+                {name: 'Alisa', id: 3}
             ]
 
         }
+        this.maxId = 4;
 
+    }
+
+    AddItem = (e, name) => {
+        e.preventDefault();
+        const newItem = {
+            name,
+            id: this.maxId++
+        }
+        this.setState(({data}) => {
+            return{
+                data: [...data, newItem]
+            }
+        })
     }
 
 
@@ -25,7 +39,7 @@ class App extends Component {
             <div className="App">
                 <HeaderList/>
                 <Dolist data={this.state.data}/>
-                <AddItem/>
+                <AddItem addItem={this.AddItem}/>
             </div>
         );
     }
